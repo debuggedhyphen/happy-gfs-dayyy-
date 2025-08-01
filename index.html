@@ -1,167 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm Sorry</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #ff7eb3, #ff65a3);
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            position: relative; /* Ensure cat emojis are positioned relative to the body */
-            overflow: hidden; /* Prevent scrollbars when cats fly */
-            animation: fadeIn 1s ease-in;
-        }
-
-        .container {
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            z-index: 1; /* Keep the container above the cat emojis */
-        }
-
-        h1 {
-            font-size: 3em;
-            color: #ff6f61;
-            margin-bottom: 10px;
-            animation: bounce 1s infinite;
-        }
-
-        p {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-
-        .heart {
-            font-size: 50px;
-            color: #ff6f61;
-            animation: heartbeat 1.5s infinite;
-        }
-
-        .button {
-            padding: 15px 30px;
-            font-size: 1.2em;
-            color: #ff6f61;
-            background-color: #fff;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .button:hover {
-            background-color: #ff6f61;
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .cat-emoji {
-            position: absolute;
-            font-size: 50px; /* Size of the cat emoji */
-            top: -50px; /* Start just above the viewport */
-            transition: transform 0.5s ease; /* Smooth transition for rotation */
-            z-index: 0; /* Keep the emojis behind the container */
-        }
-
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        #message {
-            margin-top: 20px;
-            font-size: 1.2em;
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Prince Hirpara - pure css blooming flowers with falling leaves</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <!-- partial:index.partial.html -->
+  <div class="flower">
 
-    <div class="container">
-        <h1>I'm Sorry ❤️</h1>
-        <p>For not giving you attention today.</p>
-        <i class="fas fa-heart heart"></i>
-        <br>
-        <button class="button" onclick="startCatRain()">Click Here to Accept My Apology</button>
-
-        <div id="message">
-            <p>You are one pain in the ass woman.</p>
-        </div>
+    <!-- 🎉 Happy Girlfriend’s Day Message -->
+    <div class="message">
+      Happy Girlfriend's Day 💐
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     ✨ I love you soo much you're the best gf I could ever ask for ✨ 
     </div>
 
-    <script>
-        function startCatRain() {
-            document.getElementById("message").style.display = "block";
-            for (let i = 0; i < 10; i++) {
-                createCatEmoji();
-            }
-        }
+    <div class="f-wrapper">
+      <div class="flower__line"></div>
+      <div class="f">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__leaf flower__leaf--5"></div>
+        <div class="flower__leaf flower__leaf--6"></div>
+        <div class="flower__leaf flower__leaf--7"></div>
+        <div class="flower__leaf flower__leaf--8 flower__fall-down--yellow"></div>
+      </div>
+    </div>
 
-        function createCatEmoji() {
-            const catEmoji = document.createElement("div");
-            catEmoji.innerHTML = "🐱"; // Cat emoji
-            catEmoji.className = "cat-emoji";
-            catEmoji.style.left = Math.random() * window.innerWidth + 'px';
-            document.body.appendChild(catEmoji);
+    <div class="f-wrapper f-wrapper--2">
+      <div class="flower__line"></div>
+      <div class="f">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__leaf flower__leaf--5"></div>
+        <div class="flower__leaf flower__leaf--6"></div>
+        <div class="flower__leaf flower__leaf--7"></div>
+        <div class="flower__leaf flower__leaf--8 flower__fall-down--pink"></div>
+      </div>
+    </div>
 
-            // Animate the cat emoji flying around
-            let posY = Math.random() * -100; // Start just above the viewport
-            let posX = parseFloat(catEmoji.style.left); // Start position in x-axis
-            const fallInterval = setInterval(() => {
-                if (posY >= window.innerHeight) {
-                    clearInterval(fallInterval);
-                    document.body.removeChild(catEmoji); // Remove the cat emoji after it flies out of view
-                } else {
-                    posY += 3 + Math.random() * 4; // Move down by a variable speed
-                    posX += (Math.random() - 0.5) * 20; // Random left/right movement
-                    catEmoji.style.top = posY + 'px'; // Update the vertical position
-                    catEmoji.style.left = posX + 'px'; // Update the horizontal position
-                    catEmoji.style.transform = `rotate(${Math.random() * 360}deg)`; // Random rotation
+    <div class="f-wrapper f-wrapper--3">
+      <div class="flower__line"></div>
+      <div class="f">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__leaf flower__leaf--5"></div>
+        <div class="flower__leaf flower__leaf--6"></div>
+        <div class="flower__leaf flower__leaf--7"></div>
+        <div class="flower__leaf flower__leaf--8 flower__fall-down--purple"></div>
+      </div>
+    </div>
 
-                    // Keep emojis within the viewport
-                    if (posX < 0) posX = 0;
-                    if (posX > window.innerWidth - 50) posX = window.innerWidth - 50; // Adjust for emoji size
-                }
-            }, 100); // Update every 100 milliseconds
-        }
-    </script>
-
+    <div class="flower__glass"></div>
+  </div>
+  <!-- partial -->
 </body>
 </html>
